@@ -1,0 +1,342 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  background: #222;
+  color: #fff;
+  font-family: 'Inter', 'Roboto', Arial, sans-serif;
+}
+
+.app-root {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Sidebar styling */
+.sidebar {
+  width: 90px;
+  background: #191c1c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 18px;
+  padding-bottom: 20px;
+  box-sizing: border-box;
+  gap: 12px;
+  height: 100vh;
+  min-height: 0;
+  overflow: visible;
+}
+
+.sidebar-logo {
+  margin-bottom: 10px;
+}
+
+.sidebar-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sidebar-btn {
+  width: 100%;
+  background: transparent; /* matches sidebar background */
+  border: none;
+  color: #aab6b5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  font-size: 0.98rem;
+  padding: 10px 0 2px 0;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: background 0.18s, color 0.18s;
+  gap: 6px;
+}
+.sidebar-btn span {
+  font-size: 0.92rem;
+  margin-top: 3px;
+}
+.sidebar-btn.active,
+.sidebar-btn:hover {
+  background: #25282b !important;
+  color: #23c9e2;
+}
+.sidebar-account {
+  margin: 18px 0 6px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+}
+.sidebar-account-btn {
+  background: #23c9e2;
+  color: #111;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.03em;
+  border: none;
+  border-radius: 100vw;
+  width: 37px;
+  height: 37px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.pro-badge {
+  background: #23c9e2;
+  color: #181b1b;
+  border-radius: 7px;
+  font-size: 0.81rem;
+  margin-left: 2px;
+  padding: 2px 4px;
+}
+.sidebar-label {
+  font-size: 0.86rem;
+  color: #bfcfcf;
+  margin-top: 0;
+}
+
+/* Main content and centering */
+.main-content {
+  flex: 1 1 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: stretch;
+  overflow: hidden;
+  min-width: 0;
+  min-height: 0;
+  position: relative;
+}
+
+.center-container {
+  position: absolute;
+  left: 0; top: 0; right: 0; bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Logo styling */
+.logo {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 36px;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+.logo-pro {
+  color: #23c9e2;
+  font-size: 1.2rem;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+/* Enlarged search box and group */
+.large-search-box {
+  width: 840px;
+  max-width: 98vw;
+  background: #171a1a;
+  border-radius: 22px;
+  margin: 0 auto;
+  box-shadow: 0 10px 46px #000c;
+  padding: 36px 44px 30px 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-bottom: 18px;
+}
+
+.search-input-group {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  width: 100%;
+}
+
+.large-search-input {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.25rem;
+  font-family: inherit;
+  padding: 0 18px;
+  border-radius: 14px 0 0 14px;
+  outline: none;
+  flex: 1;
+  height: 64px;
+  letter-spacing: 0.01em;
+  box-sizing: border-box;
+}
+
+.search-actions {
+  display: flex;
+  align-items: center;
+}
+
+.search-btn,
+.search-btn.secondary {
+  height: 64px;
+  width: 64px;
+  border-radius: 0 14px 14px 0;
+  margin-left: 0;
+  font-size: 1.38rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: #181a1a;
+  color: #23c9e2;
+  cursor: pointer;
+  transition: background 0.23s, color 0.18s;
+}
+.search-btn {
+  background: #23c9e2;
+  color: #191c1c;
+  border-radius: 0 14px 14px 0;
+  margin-right: 1px;
+}
+.search-btn.secondary {
+  border-radius: 14px;
+  margin-right: 8px;
+  background: #181a1a;
+  color: #23c9e2;
+}
+.search-btn.secondary:last-child {
+  margin-right: 0;
+}
+.search-btn:hover {
+  background: #19b9cf;
+  color: #fff;
+}
+.search-btn.secondary:hover {
+  background: #212425;
+  color: #00ebfc;
+}
+
+/* Informational text under search */
+.search-info {
+  color: #a0a0a0;
+  font-size: 0.95rem;
+  margin-top: 18px;
+  max-width: 610px;
+  text-align: center;
+  user-select: none;
+}
+
+@media (max-width: 1020px) {
+  .large-search-box {
+    width: 98vw;
+    padding: 16px 6px;
+  }
+}
+@media (max-width: 700px) {
+  .search-box, .large-search-box {
+    width: 98vw;
+    padding: 12px 4vw 10px 4vw;
+  }
+  .logo {
+    font-size: 2.1rem;
+    margin-bottom: 16px;
+  }
+  .sidebar {
+    width: 54px;
+    padding-top: 10px;
+    gap: 7px;
+  }
+  .sidebar-btn span {
+    font-size: 0.80rem;
+  }
+}
+/* ...keep all previous sidebar and main-content styles... */
+
+/* New/updated search bar for "stacked" layout */
+.extra-large-search-box {
+  width: 920px;
+  max-width: 99vw;
+  min-height: 142px;
+  background: #181b1c;
+  border-radius: 20px;
+  margin: 0 auto;
+  box-shadow: 0 12px 50px #000c;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  margin-bottom: 22px;
+  padding: 28px 28px 18px 28px;
+  gap: 0;
+}
+.stacked-search-input {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.22rem;
+  font-family: inherit;
+  padding: 0 10px;
+  border-radius: 12px;
+  outline: none;
+  flex: 1;
+  width: 100%;
+  height: 56px;
+  letter-spacing: 0.01em;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+.search-options-row {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  gap: 8px;
+  width: fit-content;
+}
+.search-toolbar-btn {
+  height: 45px;
+  width: 45px;
+  border-radius: 12px;
+  margin: 0 2px 0 0;
+  font-size: 1.34rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: #1d2323;
+  color: #23c9e2;
+  cursor: pointer;
+  transition: background 0.2s, color 0.13s;
+}
+.search-toolbar-btn:first-child {
+  background: #23c9e2;
+  color: #191c1c;
+}
+.search-toolbar-btn:hover {
+  background: #212425;
+  color: #18e7f4;
+}
+.search-toolbar-btn:first-child:hover {
+  background: #1db7ce;
+  color: #fff;
+}
+@media (max-width: 1020px) {
+  .extra-large-search-box {
+    width: 98vw;
+    padding: 14px 2vw;
+  }
+}
